@@ -11,4 +11,5 @@
   <div>
     <a href="/contact-us" class="bg-neutral-900 text-white py-2 px-4 rounded-md hover:bg-neutral-700">Contact Us</a>
   </div>
+    <img src="$lib/images/waves.png" alt="Waves" class="w-auto h-auto">
 </div>
