@@ -1,39 +1,18 @@
 <script>
-  let name = "";
-  let email = "";
-  let message = "";
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const response = await fetch("/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, message }),
-    });
-
-    if (response.ok) {
-      alert("Email sent successfully");
-    } else {
-      alert("Error sending email");
-    }
-  };
+ let email="";
+ let name="";
+ let message ="";
 </script>
 
-<form on:submit={handleSubmit}>
-  <label>
-    Name:
-    <input type="text" bind:value={name} required />
-  </label>
-  <label>
-    Email:
-    <input type="email" bind:value={email} required />
-  </label>
-  <label>
-    Message:
-    <textarea bind:value={message} required></textarea>
-  </label>
-  <button type="submit">Send</button>
-</form>
+<div class="flex flex-col justify-center items-center space-y-10">
+<div>Contact Us</div>
+<div class="flex flex-row">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required />
+    <label for="name">Email:</label>
+  <input type="text" id="name" name="email" required />
+</div>
+  <label for="name">Message:</label>
+  <input type="text" id="name" name="messange" required />
+  <input type="submit" value="Send Message" />
+</div>
