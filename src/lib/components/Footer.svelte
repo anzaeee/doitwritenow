@@ -1,7 +1,9 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
+  import HeaderItem from "./HeaderItem.svelte";
 </script>
 
-<div>
-  <Button link="/about">About</Button>
+<div class="flex flex-row w-screen h-auto justify-between mt-5">
+  <div class="ml-10">
+    <HeaderItem link="/about">About</HeaderItem>
+  </div>
 </div>

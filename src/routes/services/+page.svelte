@@ -1,10 +1,7 @@
-<script>
-</script>
-
 <div class="flex flex-col justify-center items-center space-y-20">
-  <div class="flex flex-col justify-center items-center gap-10 fade-in mt-20">
-    <div class="text-6xl text-primary font-bold">We Write, You Win.</div>
-    <div class="text-2xl font-medium">
+  <div class="flex flex-col justify-center items-center gap-10 mt-20">
+    <div class="text-4xl text-primary font-bold fade-in">Our Services</div>
+    <div class="text-xl font-medium">
       Offering ghostwriting services such that your work stands out from the
       rest.
     </div>
@@ -13,6 +10,3 @@
     <button type="submit">Contact Us</button>
   </div>
 </div>
-
-<style>
-</style>

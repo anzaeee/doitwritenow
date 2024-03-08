@@ -1,15 +1,16 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
+  import HeaderItem from "./HeaderItem.svelte";
 </script>
 
 <div class="flex flex-row w-screen h-auto justify-between mt-5">
   <div class=" flex flex-row gap-4 pd-2 ml-10">
-    <Button link="/">Home</Button>
-    <Button link="/about">About</Button>
-    <Button link="/testimonials">Testimonials</Button>
+    <HeaderItem link="/">Home</HeaderItem>
+    <HeaderItem link="/about">About</HeaderItem>
+    <HeaderItem link="/services">Services</HeaderItem>
+    <HeaderItem link="/testimonials">Testimonials</HeaderItem>
   </div>
   <div class="flex flex-row gap-4 pd-2 mr-10">
-    <Button link="/contact-us">Contact Us</Button>
-    <Button>Chat With Us</Button>
+    <HeaderItem link="/contact-us">Contact Us</HeaderItem>
+    <HeaderItem>Chat With Us</HeaderItem>
   </div>
 </div>
