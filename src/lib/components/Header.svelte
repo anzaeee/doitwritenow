@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="flex flex-row w-screen h-auto justify-between mt-5 bg-slate-50 justify-center"
+  class="flex flex-row w-screen h-auto justify-between mt-5 justify-center"
 >
   <div class="flex flex-row gap-4 p-2 ml-10">
     <HeaderItem link="/">Home</HeaderItem>
