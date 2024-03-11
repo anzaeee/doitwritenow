@@ -1,9 +1,13 @@
 <script lang="ts">
-  import HeaderItem from "./HeaderItem.svelte";
+  // You can define any necessary functions or variables here
 </script>
 
-<div class="flex flex-row w-screen h-auto justify-between mt-5">
-  <div class="ml-10">
-    <HeaderItem link="/about">About</HeaderItem>
+<div class="flex flex-row w-screen h-auto justify-between my-10 bg-gray-900">
+  <div class="ml-5">
+    <p class="text-white font-medium">Do It Write Now All Rights Reserved © 2024</p>
+  </div>
+  <div class="mr-10">
+    <a class="text-white font-medium" href="mailto:your-email@example.com">Email</a>
+    <a class="text-white font-medium ml-5" href="https://www.linkedin.com/">LinkedIn</a>
   </div>
 </div>

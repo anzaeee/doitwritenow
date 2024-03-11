@@ -54,8 +54,8 @@
   import Box from "$lib/components/Box.svelte";
 </script>
 
-<div class="flex flex-col justify-center items-center space-y-20">
-  <div class="flex flex-col justify-center items-center gap-10 mt-20">
+<div class="flex flex-col justify-center items-center space-y-8">
+  <div class="flex flex-col justify-center items-center gap-10 mt-5">
     <div class="text-4xl text-primary font-bold fade-in">Our Services</div>
     <div class="text-xl font-medium text-neutral-750">
       Offering ghostwriting services such that your work stands out from the

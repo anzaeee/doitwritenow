@@ -3,10 +3,10 @@
   export let content: string;
 </script>
 
-<div class="review-box rounded-lg w-auto h-auto p-5 m-5 bg-slate-50">
+<div class="review-box rounded-lg w-auto h-auto p-5 m-5 ">
   <div class="flex flex-col flex-grow">
-    <div class="author text-xl font-bold text-secondary">{author}</div>
-    <div class="content text-md font-semibold text-neutral-700">{content}</div>
+    <div class="author text-lg font-bold text-secondary">{author}</div>
+    <div class="content text-sm font-medium text-neutral-700">{content}</div>
   </div>
 </div>
 
