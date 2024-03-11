@@ -1,5 +1,7 @@
 <script>
   import Box from "$lib/components/Box.svelte";
+  import Header from "$lib/components/Header.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 
   let reviews = [
     {
@@ -50,8 +52,10 @@
   ];
 </script>
 
-<div class="flex flex-col justify-center items-center space-y-8">
-  <div class="flex flex-col justify-center items-center gap-10 mt-5">
+<Header />
+
+<div class="flex flex-col justify-center items-center space-y-8 border-t">
+  <div class="flex flex-col justify-center items-center gap-10 mt-10">
     <div class="text-4xl text-primary font-bold fade-in">
       Learn what our clients are saying about us
     </div>
@@ -63,6 +67,7 @@
     {/each}
   </div>
 </div>
+<Footer />
 
 <style>
   .grid {

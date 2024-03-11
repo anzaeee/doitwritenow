@@ -13,7 +13,7 @@
       class:text-primary={!active}
       class:text-neutral-700={active}
       class:underline={active}
-      class:font-bold={active}
+      class:font-extrabold={active}
       href={link}
     >
       <slot />

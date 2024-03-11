@@ -1,8 +1,13 @@
 <script>
+  import Header from "$lib/components/Header.svelte";
+  import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<div class="flex flex-col justify-center items-center space-y-8 h-auto w-auto">
-  <div class="flex flex-col justify-center items-center gap-10 fade-in mt-5">
+<Header />
+<div
+  class="flex flex-col justify-center items-center space-y-8 border-t h-auto w-auto"
+>
+  <div class="flex flex-col justify-center items-center gap-10 fade-in mt-10">
     <div class="text-6xl text-primary font-bold">We Write, You Win.</div>
     <div class="text-2xl font-medium">
       Offering ghostwriting services such that your work stands out from the
@@ -20,3 +25,4 @@
     <img src="src/lib/images/heroimg.jpg" alt="Waves" />
   </div>
 </div>
+<Footer />
