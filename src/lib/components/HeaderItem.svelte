@@ -8,7 +8,7 @@
 <div>
   {#if link}
     <a
-      class="main btn btn-ghost btn-sm hover:text-slate-50 hover:rounded-md hover:bg-neutral-700 font-medium text-md"
+      class="btn-primary hover:text-slate-50 hover:rounded-md hover:bg-neutral-700 hover:pd-10 font-medium text-md"
       class:btn-active={active}
       class:text-primary={!active}
       class:text-neutral-700={active}
