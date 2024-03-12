@@ -60,7 +60,7 @@
 <div class="flex flex-col justify-center items-center space-y-8 border-t">
   <div class="flex flex-col justify-center items-center gap-10 mt-10">
     <div class="text-4xl text-primary font-bold fade-in">Our Services</div>
-    <div class="text-xl space-y-4 font-medium text-neutral-750">
+    <div class="text-xl space-y-4 font-medium text-neutral-750 fade-in">
       Offering ghostwriting services such that your work stands out from the
       rest.
     </div>
