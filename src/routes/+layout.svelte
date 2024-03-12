@@ -6,7 +6,7 @@
 <slot />
 
 <div class="relative">
-  <div class="absolute bottom-5 right-5">
+  <div class="absolute bottom-10 right-5">
     <WhatsappWidget />
   </div>
 </div>
