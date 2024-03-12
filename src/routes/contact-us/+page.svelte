@@ -4,6 +4,7 @@
 </script>
 
 <Header />
+
 <div
   class="flex flex-col justify-center items-center space-y-8 gap-10 border-t"
 >
@@ -29,7 +30,7 @@
   <div class="form-group flex flex-row items-center">
     <label class="label" for="message">Message:</label>
     <textarea
-      class="rounded-input bg-slate-100 w-100%`"
+      class="rounded-input bg-slate-100 w-full"
       id="message"
       name="message"
       rows="4"
@@ -37,16 +38,17 @@
     ></textarea>
   </div>
   <input
-    class="bg-slate-700 hover:bg-slate-900 text-white rounded-input cursor-pointer w-100"
+    class="bg-slate-700 hover:bg-slate-900 text-white rounded-input cursor-pointer w-full"
     type="submit"
     value="Send Message"
   />
 </div>
+
 <Footer />
 
 <style>
   .rounded-input {
-    border-radius: 0.5rem; /* You can adjust this value to change the roundness */
+    border-radius: 0.5rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
   }
