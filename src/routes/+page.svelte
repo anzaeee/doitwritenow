@@ -22,7 +22,10 @@
     >
   </div>
   <div class="w-1/3 h-1/2 m-10">
-    <img src="src/lib/images/heroimg.jpg" alt="Waves" />
+    <img
+      src="https://www.pexels.com/photo/person-holding-white-ceramic-be-happy-painted-mug-851213"
+      alt="Person holding a white ceramic mug with 'Be Happy' painted on it"
+    />
   </div>
 </div>
 <Footer />
