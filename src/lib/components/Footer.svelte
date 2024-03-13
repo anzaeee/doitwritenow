@@ -1,5 +1,5 @@
 <script lang="ts">
-  // You can define any necessary functions or variables here
+
 </script>
 
 <div
