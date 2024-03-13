@@ -1,6 +1,7 @@
 <script>
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
+
   let reviews = [
     {
       author: "Book Writing",
@@ -53,19 +54,19 @@
         "Optimizing your content to improve search engine visibility and drive traffic to your website.",
     },
   ];
+
   import Box from "$lib/components/Box.svelte";
 </script>
 
 <Header />
 <div class="flex flex-col justify-center items-center space-y-8 border-t">
   <div class="flex flex-col justify-center items-center gap-10 mt-10">
-    <div class="text-4xl text-primary font-bold fade-in">Our Services</div>
-    <div class="text-xl space-y-4 font-medium text-neutral-750 fade-in">
-      Offering ghostwriting services such that your work stands out from the
-      rest.
+    <div class="text-4xl md:text-6xl  text-primary font-bold fade-in">Our Services</div>
+    <div class="text-xl  md:text-2xl space-y-4 font-medium text-neutral-750 fade-in">
+      Offering ghostwriting services such that your work stands out from the rest.
     </div>
 
-    <div class="grid grid-cols-3 align-center gap-4 fade-in">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 fade-in max-w-7xl mx-auto px-4">
       {#each reviews as review}
         <Box author={review.author} content={review.content} />
       {/each}
@@ -80,3 +81,9 @@
   </div>
 </div>
 <Footer />
+
+<style>
+  .grid {
+    width: 100%;
+  }
+</style>
