@@ -52,13 +52,7 @@
   <div
     class="flex flex-col justify-center items-center space-y-8 gap-10 border-t"
   >
-        <div class="text-4xl md:text-6xl text-primary font-bold fade-in text-center">
-      Contact Us
-    </div>
-        <div class="text-xl  md:text-2xl space-y-4 font-medium text-neutral-750 fade-in">
-      Have a question? Reach out to us! We are eager to help you.
-    </div>
-  </div>
+    <div class="text-4xl text-primary mt-10 font-bold fade-in">Contact Us</div>
     <div class="form-group px-2 w-full md:w-3/4 lg:w-1/2 xl:w-1/3">
       <div class="flex flex-col md:flex-row w-full">
         <input
