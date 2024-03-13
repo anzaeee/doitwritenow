@@ -9,15 +9,15 @@
   <div class="flex flex-col justify-center items-center space-y-8 gap-10 border-t">
     <div class="text-4xl text-primary mt-10 font-bold fade-in">Contact Us</div>
     <div class="form-group px-2 w-full md:w-3/4 lg:w-1/2 xl:w-1/3">
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row w-full">
         <input
-          class="rounded-input bg-slate-100 mb-4 md:mb-0 md:mr-4"
+          class="rounded-input bg-slate-100 w-full mb-4 md:mb-0 md:mr-4"
           type="text"
           placeholder="Name"
           required
         />
         <input
-          class="rounded-input bg-slate-100"
+          class="rounded-input bg-slate-100 w-full"
           type="email"
           placeholder="Email"
           required
