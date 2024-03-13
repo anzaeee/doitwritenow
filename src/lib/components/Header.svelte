@@ -11,8 +11,9 @@
   </div>
   <div class="flex flex-row gap-4 p-2 mr-10">
     <HeaderItem link="/contact-us">Contact Us</HeaderItem>
-    <HeaderItem link="https://wa.me/923369555887" target="_blank"
-      >Chat With Us</HeaderItem
-    >
+<HeaderItem link="https://wa.me/923369555887" target="_blank" rel="noopener noreferrer">
+  Chat With Us
+</HeaderItem>
+
   </div>
 </div>

@@ -20,8 +20,8 @@
   </div>
   <div class="w-full md:w-1/2 m-10">
     <img
-      src="https://www.pexels.com/photo/person-holding-white-ceramic-be-happy-painted-mug-851213"
-      alt="Person holding a white ceramic mug with 'Be Happy' painted on it"
+      src="https://images.app.goo.gl/mY8f7Rk3hXUpUjmi7"
+      alt="Person writing"
       class="w-full"
     />
   </div>
