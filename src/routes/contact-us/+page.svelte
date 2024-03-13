@@ -1,11 +1,7 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<Header />
-
-<div class="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
+<div class="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 min-h-screen justify-center align-center">
   <div class="flex flex-col justify-center items-center space-y-8 gap-10 border-t">
     <div class="text-4xl text-primary mt-10 font-bold fade-in">Contact Us</div>
     <div class="form-group px-2 w-full md:w-3/4 lg:w-1/2 xl:w-1/3">
@@ -40,8 +36,6 @@
     </div>
   </div>
 </div>
-
-<Footer />
 
 <style>
   .rounded-input {
