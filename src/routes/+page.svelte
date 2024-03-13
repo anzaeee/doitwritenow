@@ -20,8 +20,8 @@
   </div>
   <div class="w-full md:w-1/2 m-10">
     <img
-      src="https://images.app.goo.gl/mY8f7Rk3hXUpUjmi7"
-      alt="Person writing"
+      src="src/lib/images/heroimg.jpg"
+      alt="Keypad"
       class="w-full"
     />
   </div>
