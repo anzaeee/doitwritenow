@@ -1,10 +1,7 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
 </script>
 
-<Header />
-<div class="flex flex-col justify-center items-center space-y-8 border-t h-auto w-auto">
+<div class="flex flex-col justify-center items-center space-y-8 border-t h-auto w-auto min-h-screen">
   <div class="flex flex-col justify-center items-center gap-10 fade-in mt-10">
     <div class="text-4xl md:text-6xl text-primary font-bold text-center">We Write, You Win.</div>
     <div class="text-lg md:text-2xl font-medium text-center">
@@ -26,7 +23,6 @@
     />
   </div>
 </div>
-<Footer />
 
 <style>
 @media (min-width: 768px) {

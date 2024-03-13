@@ -1,6 +1,4 @@
 <script>
-  import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
 
   let reviews = [
     {
@@ -58,7 +56,6 @@
   import Box from "$lib/components/Box.svelte";
 </script>
 
-<Header />
 <div class="flex flex-col justify-center items-center space-y-8 border-t">
   <div class="flex flex-col justify-center items-center gap-10 mt-10">
     <div class="text-4xl md:text-6xl  text-primary font-bold fade-in">Our Services</div>
@@ -80,7 +77,6 @@
     >
   </div>
 </div>
-<Footer />
 
 <style>
   .grid {
