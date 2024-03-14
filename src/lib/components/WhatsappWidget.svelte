@@ -2,7 +2,7 @@
   import WhatsappLogo from "$lib/images/WhatsappLogo.svelte";
 
   function openWhatsAppChat() {
-    const phoneNumber = "923369555887";
+    const phoneNumber = "13477169628";
     const url = `https://wa.me/${phoneNumber}`;
     window.open(url, "_blank", "width=500,height=600");
   }

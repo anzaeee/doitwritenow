@@ -1,5 +1,4 @@
 <script lang="ts">
-
 </script>
 
 <div
@@ -11,11 +10,8 @@
     </p>
   </div>
   <div class="mr-10">
-    <a class="text-white font-medium" href="mailto:your-email@example.com"
+    <a class="text-white font-medium" href="mailto:doitwritenow@protonmail.com"
       >Email</a
-    >
-    <a class="text-white font-medium ml-5" href="https://www.linkedin.com/"
-      >LinkedIn</a
     >
   </div>
 </div>

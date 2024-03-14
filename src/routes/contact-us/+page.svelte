@@ -1,41 +1,38 @@
 <script>
-  import { onMount } from "svelte";
+  function sendEmail() {
+    var name = document.getElementById("nameInput").value.trim();
+    var email = document.getElementById("emailInput").value.trim();
+    var message = document.getElementById("messageInput").value.trim();
 
-  let name = "";
-  let email = "";
-  let message = "";
+    // Check if all required fields are filled
+    if (!name || !email || !message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
-  onMount(() => {
-    const submitButton = document.getElementById("submitButton");
+    // Construct the email body with placeholders replaced by actual values
+    var body =
+      "Quotation received from " +
+      name +
+      " and " +
+      email +
+      ". Message: " +
+      message;
 
-    submitButton.addEventListener("click", (event) => {
-      event.preventDefault();
+    // Show success message after sending the email
+    alert("Email sent successfully!");
 
-      name = document.getElementById("nameInput").value;
-      email = document.getElementById("emailInput").value;
-      message = document.getElementById("messageInput").value;
+    // Construct the mailto link with pre-filled fields
+    var mailtoLink =
+      "mailto:doitwritenow@protonmail.com" +
+      "?subject=Message from " +
+      encodeURIComponent(name) +
+      "&body=" +
+      encodeURIComponent(body);
 
-      if (name && email && message) {
-        // Replace with your form collector endpoint
-        fetch("https://formcollector.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            message,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((error) => {
-            console.error("Error:", error);
-          });
-      }
-    });
-  });
+    // Open the user's default email client
+    window.location.href = mailtoLink;
+  }
 </script>
 
 <div
@@ -84,6 +81,7 @@
       <button
         id="submitButton"
         class="bg-slate-800 hover:bg-slate-900 text-white rounded-input cursor-pointer w-full"
+        onclick="sendEmail()"
       >
         Send Message
       </button>
