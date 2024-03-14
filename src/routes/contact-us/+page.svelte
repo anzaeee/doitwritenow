@@ -1,47 +1,39 @@
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  import { onMount } from "svelte";
+
+  let name = "";
+  let email = "";
+  let message = "";
+
+  onMount(() => {
     const submitButton = document.getElementById("submitButton");
 
-    submitButton.addEventListener("click", function () {
-      const name = document.getElementById("nameInput").value;
-      const email = document.getElementById("emailInput").value;
-      const message = document.getElementById("messageInput").value;
+    submitButton.addEventListener("click", (event) => {
+      event.preventDefault();
 
-      // Example client-side validation: Ensure all fields are filled
-      if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
-        alert("Please fill out all fields.");
-        return;
-      }
+      name = document.getElementById("nameInput").value;
+      email = document.getElementById("emailInput").value;
+      message = document.getElementById("messageInput").value;
 
-      // Form data to be sent to Formspree API
-      const formData = {
-        name: name,
-        email: email,
-        message: message,
-      };
-
-      // Make an AJAX request to submit the form data to Formspree
-      fetch("https://formspree.io/shanzayyasad@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Failed to send message.");
-          }
-          alert("Message sent successfully!");
-
-          document.getElementById("nameInput").value = "";
-          document.getElementById("emailInput").value = "";
-          document.getElementById("messageInput").value = "";
+      if (name && email && message) {
+        // Replace with your form collector endpoint
+        fetch("https://formcollector.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+          }),
         })
-        .catch((error) => {
-          console.error("Error:", error);
-          alert("Failed to send message. Please try again later.");
-        });
+          .then((response) => response.json())
+          .then((data) => console.log(data))
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
     });
   });
 </script>
