@@ -5,7 +5,6 @@
 <div class="flex flex-row w-screen h-auto justify-between my-5 justify-center">
   <div class="flex flex-row gap-4 p-2 ml-10">
     <HeaderItem link="/">Home</HeaderItem>
-    <HeaderItem link="/about">About</HeaderItem>
     <HeaderItem link="/services">Services</HeaderItem>
     <HeaderItem link="/testimonials">Testimonials</HeaderItem>
   </div>
