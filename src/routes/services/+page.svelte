@@ -71,9 +71,9 @@
   </div>
   <div>
     <a
-      href="/contact-us"
+      href="https://wa.me/13477169628"
       class="bg-neutral-900 text-white py-2 px-4 rounded-md hover:bg-neutral-700"
-      >Contact Us</a
+      >Chat With Us</a
     >
   </div>
 </div>
