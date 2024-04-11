@@ -21,7 +21,11 @@
     >
   </div>
   <div class="w-full md:w-1/2 m-10">
-    <img src="src/lib/images/heroimg.jpg" alt="Keypad" class="w-full" />
+    <img
+      src="https://www.netmechanic.co.za/wp-content/uploads/2019/11/why-is-copywriting-important-min.jpg"
+      alt="Keypad"
+      class="w-full"
+    />
   </div>
 </div>
 
