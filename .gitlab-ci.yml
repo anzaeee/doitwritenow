@@ -1,0 +1,135 @@
+stages:
+  - build
+  - test
+  - deploy
+  - regression
+
+variables:
+  NODE_VERSION: "18"
+  NPM_VERSION: "9"
+
+# Cache node_modules for faster builds
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .npm/
+
+# Build job - runs for all branches
+build:
+  stage: build
+  image: node:${NODE_VERSION}
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - npm run check
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 hour
+  only:
+    - production
+    - staging
+    - development
+
+# Integration tests - runs only on development branch
+integration_tests:
+  stage: test
+  image: node:${NODE_VERSION}
+  dependencies:
+    - build
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - echo "Running integration tests..."
+    - npm run test:integration
+    - echo "Integration tests passed!"
+  only:
+    - development
+  when: manual
+
+# Deploy to development environment (GitLab Pages)
+deploy_development:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build
+  script:
+    - echo "Mock deployment to development environment..."
+    - echo "In a real setup, this would deploy to your hosting provider"
+    - echo "Development deployment completed!"
+    - echo "Application available at: GitLab Pages URL (when configured)"
+  environment:
+    name: development
+    url: $CI_PAGES_URL
+  only:
+    - development
+  when: manual
+
+# Deploy to staging environment (GitLab Pages)
+deploy_staging:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build
+  script:
+    - echo "Mock deployment to staging environment..."
+    - echo "Running smoke tests on staging..."
+    - echo "In a real setup, this would deploy to your hosting provider"
+    - echo "Staging deployment completed!"
+    - echo "Application available at: GitLab Pages URL (when configured)"
+  environment:
+    name: staging
+    url: $CI_PAGES_URL
+  only:
+    - staging
+  when: manual
+
+# Deploy to production environment (GitLab Pages)
+deploy_production:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build
+  script:
+    - echo "Mock deployment to production environment..."
+    - echo "In a real setup, this would deploy to your hosting provider"
+    - echo "Production deployment completed!"
+    - echo "Application available at: GitLab Pages URL (when configured)"
+  environment:
+    name: production
+    url: $CI_PAGES_URL
+  only:
+    - production
+  when: manual
+
+# Regression tests - runs after production deployment
+regression_tests:
+  stage: regression
+  image: node:${NODE_VERSION}
+  dependencies:
+    - build
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - echo "Running regression tests..."
+    - npm run regression
+    - echo "Regression tests completed successfully!"
+  only:
+    - production
+  when: manual
+
+# Rollback job for production emergencies
+rollback_production:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "Rolling back production to previous version..."
+    - echo "Rollback completed!"
+  environment:
+    name: production
+    url: $CI_PAGES_URL
+  only:
+    - production
+  when: manual

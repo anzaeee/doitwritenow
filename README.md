@@ -39,3 +39,40 @@ This static website is built using Svelte.js to showcase our professional ghostw
    npm run dev
    ```
    This will start the development server and you can view the website at http://localhost:5000
+
+## CI/CD Pipeline
+
+This project uses GitLab CI/CD for automated testing and deployment. You can run everything locally first without needing domains!
+
+### Local Testing (No Domain Required)
+```sh
+# Run integration tests
+npm run test:integration
+
+# Run regression tests
+npm run regression
+
+# Run type checking
+npm run check
+
+# Build for production
+npm run build
+```
+
+### Free Hosting Options (While Waiting for Domain)
+- **GitLab Pages**: Automatic with your GitLab repo
+- **Netlify**: Free tier with custom domains later
+- **Vercel**: Free tier with custom domains later
+
+### Environments
+- **Development** (`development` branch)
+- **Staging** (`staging` branch)
+- **Production** (`production` branch)
+
+See [Local Development Guide](./LOCAL-DEVELOPMENT-GUIDE.md) for detailed setup instructions.
+
+## Branching Strategy
+- `production`: Production environment
+- `staging`: Staging environment
+- `development`: Development environment
+- `feature/*`: Feature branches
