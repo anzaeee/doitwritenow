@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   let status = "";
-  const handleSubmit = async (data) => {
+  const handleSubmit = async (event: Event) => {
     status = "Submitting...";
-    const formData = new FormData(data.currentTarget);
+    const formData = new FormData(event.currentTarget as HTMLFormElement);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 

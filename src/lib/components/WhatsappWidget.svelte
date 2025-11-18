@@ -6,13 +6,22 @@
     const url = `https://wa.me/${phoneNumber}`;
     window.open(url, "_blank", "width=500,height=600");
   }
+
+  function handleKeyDown(event: KeyboardEvent): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openWhatsAppChat();
+    }
+  }
 </script>
 
 <div
   class="whatsapp-container"
   on:click={openWhatsAppChat}
+  on:keydown={handleKeyDown}
   role="button"
   tabindex="0"
+  aria-label="Open WhatsApp chat"
 >
   <WhatsappLogo />
 </div>
