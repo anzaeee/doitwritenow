@@ -42,34 +42,24 @@ This static website is built using Svelte.js to showcase our professional ghostw
 
 ## CI/CD Pipeline
 
-This project uses GitLab CI/CD for automated testing and deployment across three environments:
+This project uses GitLab CI/CD with three environments deployed to GitLab Pages:
 
 ### Environments
-- **Development** (`development` branch): https://dev.doitwritenow.com
-- **Staging** (`staging` branch): https://staging.doitwritenow.com
-- **Production** (`production` branch): https://doitwritenow.com
+- **Development** (`development` branch) - Manual integration testing
+- **Staging** (`staging` branch) - Pre-production testing
+- **Production** (`production` branch) - Live site on GitLab Pages
 
-### Pipeline Features
-- **Automated Builds**: Runs on every push to main branches
-- **Integration Tests**: Runs on development branch updates
-- **Regression Tests**: Runs after production deployments
-- **Manual Deployments**: All deployments require manual approval
-
-### Running Tests Locally
+### Local Testing
 ```sh
-# Run integration tests
+# Run integration tests (development environment)
 npm run test:integration
 
-# Run regression tests
+# Run regression tests (production environment)
 npm run regression
 
 # Run type checking
 npm run check
 ```
-
-### Documentation
-- [CI/CD Pipeline Guide](./docs/CI-CD-GUIDE.md)
-- [Deployment Configuration](./docs/DEPLOYMENT-CONFIG.md)
 
 ## Branching Strategy
 - `production`: Production environment
