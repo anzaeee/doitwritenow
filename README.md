@@ -39,3 +39,40 @@ This static website is built using Svelte.js to showcase our professional ghostw
    npm run dev
    ```
    This will start the development server and you can view the website at http://localhost:5000
+
+## CI/CD Pipeline
+
+This project uses GitLab CI/CD for automated testing and deployment across three environments:
+
+### Environments
+- **Development** (`development` branch): https://dev.doitwritenow.com
+- **Staging** (`staging` branch): https://staging.doitwritenow.com
+- **Production** (`production` branch): https://doitwritenow.com
+
+### Pipeline Features
+- **Automated Builds**: Runs on every push to main branches
+- **Integration Tests**: Runs on development branch updates
+- **Regression Tests**: Runs after production deployments
+- **Manual Deployments**: All deployments require manual approval
+
+### Running Tests Locally
+```sh
+# Run integration tests
+npm run test:integration
+
+# Run regression tests
+npm run regression
+
+# Run type checking
+npm run check
+```
+
+### Documentation
+- [CI/CD Pipeline Guide](./docs/CI-CD-GUIDE.md)
+- [Deployment Configuration](./docs/DEPLOYMENT-CONFIG.md)
+
+## Branching Strategy
+- `production`: Production environment
+- `staging`: Staging environment
+- `development`: Development environment
+- `feature/*`: Feature branches
