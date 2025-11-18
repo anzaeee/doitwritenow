@@ -49,57 +49,25 @@ integration_tests:
     - development
   when: manual
 
-# Deploy to development environment (GitLab Pages)
-deploy_development:
+# Deploy to GitLab Pages (works for all environments)
+pages:
   stage: deploy
   image: alpine:latest
   dependencies:
     - build
   script:
-    - echo "Mock deployment to development environment..."
-    - echo "In a real setup, this would deploy to your hosting provider"
-    - echo "Development deployment completed!"
-    - echo "Application available at: GitLab Pages URL (when configured)"
-  environment:
-    name: development
-    url: $CI_PAGES_URL
-  only:
-    - development
-  when: manual
-
-# Deploy to staging environment (GitLab Pages)
-deploy_staging:
-  stage: deploy
-  image: alpine:latest
-  dependencies:
-    - build
-  script:
-    - echo "Mock deployment to staging environment..."
-    - echo "Running smoke tests on staging..."
-    - echo "In a real setup, this would deploy to your hosting provider"
-    - echo "Staging deployment completed!"
-    - echo "Application available at: GitLab Pages URL (when configured)"
-  environment:
-    name: staging
-    url: $CI_PAGES_URL
-  only:
-    - staging
-  when: manual
-
-# Deploy to production environment (GitLab Pages)
-deploy_production:
-  stage: deploy
-  image: alpine:latest
-  dependencies:
-    - build
-  script:
-    - echo "Mock deployment to production environment..."
-    - echo "In a real setup, this would deploy to your hosting provider"
-    - echo "Production deployment completed!"
-    - echo "Application available at: GitLab Pages URL (when configured)"
+    - echo "Deploying to GitLab Pages..."
+    - mkdir -p public
+    - cp -r build/* public/
+    - echo "Deployment completed!"
+    - echo "Site will be available at: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME"
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
   environment:
     name: production
-    url: $CI_PAGES_URL
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME
   only:
     - production
   when: manual
@@ -127,9 +95,10 @@ rollback_production:
   script:
     - echo "Rolling back production to previous version..."
     - echo "Rollback completed!"
+    - echo "Site available at: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME"
   environment:
     name: production
-    url: $CI_PAGES_URL
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME
   only:
     - production
   when: manual

@@ -42,34 +42,24 @@ This static website is built using Svelte.js to showcase our professional ghostw
 
 ## CI/CD Pipeline
 
-This project uses GitLab CI/CD for automated testing and deployment. You can run everything locally first without needing domains!
+This project uses GitLab CI/CD with three environments deployed to GitLab Pages:
 
-### Local Testing (No Domain Required)
+### Environments
+- **Development** (`development` branch) - Manual integration testing
+- **Staging** (`staging` branch) - Pre-production testing
+- **Production** (`production` branch) - Live site on GitLab Pages
+
+### Local Testing
 ```sh
-# Run integration tests
+# Run integration tests (development environment)
 npm run test:integration
 
-# Run regression tests
+# Run regression tests (production environment)
 npm run regression
 
 # Run type checking
 npm run check
-
-# Build for production
-npm run build
 ```
-
-### Free Hosting Options (While Waiting for Domain)
-- **GitLab Pages**: Automatic with your GitLab repo
-- **Netlify**: Free tier with custom domains later
-- **Vercel**: Free tier with custom domains later
-
-### Environments
-- **Development** (`development` branch)
-- **Staging** (`staging` branch)
-- **Production** (`production` branch)
-
-See [Local Development Guide](./LOCAL-DEVELOPMENT-GUIDE.md) for detailed setup instructions.
 
 ## Branching Strategy
 - `production`: Production environment
