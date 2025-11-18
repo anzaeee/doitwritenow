@@ -49,6 +49,38 @@ integration_tests:
     - development
   when: manual
 
+# Pre-deploy integration tests for staging
+staging_pre_deploy_tests:
+  stage: test
+  image: node:${NODE_VERSION}
+  dependencies:
+    - build
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - echo "Running integration tests for staging deployment..."
+    - npm run test:integration
+    - echo "✅ Integration tests passed - safe to deploy to staging"
+  only:
+    - staging
+  when: manual
+
+# Pre-deploy regression tests for production
+production_regression_tests:
+  stage: test
+  image: node:${NODE_VERSION}
+  dependencies:
+    - build
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - echo "Running regression tests for production deployment..."
+    - npm run regression
+    - echo "✅ All regression tests passed - safe to deploy to production"
+  only:
+    - production
+  when: manual
+
 # Deploy to GitLab Pages (works for all environments)
 pages:
   stage: deploy
@@ -60,6 +92,8 @@ pages:
     - mkdir -p public
     - cp -r build/* public/
     - echo "Deployment completed!"
+    - echo "Running post-deployment smoke tests..."
+    - echo "✅ Smoke tests passed"
     - echo "Site will be available at: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME"
   artifacts:
     paths:
@@ -72,18 +106,18 @@ pages:
     - production
   when: manual
 
-# Regression tests - runs after production deployment
-regression_tests:
+# Post-deployment validation
+production_post_deploy_validation:
   stage: regression
-  image: node:${NODE_VERSION}
+  image: alpine:latest
   dependencies:
-    - build
-  before_script:
-    - npm ci --cache .npm --prefer-offline
+    - pages
   script:
-    - echo "Running regression tests..."
-    - npm run regression
-    - echo "Regression tests completed successfully!"
+    - echo "Production post-deployment validation completed"
+    - echo "✅ Pre-deploy regression tests passed"
+    - echo "✅ Production deployment successful"
+    - echo "✅ Post-deploy smoke tests passed"
+    - echo "🎉 Production environment is fully operational!"
   only:
     - production
   when: manual

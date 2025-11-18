@@ -42,12 +42,33 @@ This static website is built using Svelte.js to showcase our professional ghostw
 
 ## CI/CD Pipeline
 
-This project uses GitLab CI/CD with three environments deployed to GitLab Pages:
+This project supports both **GitLab CI/CD** and **GitHub Actions** for comprehensive automation:
 
 ### Environments
-- **Development** (`development` branch) - Manual integration testing
+- **Development** (`development` branch) - Integration testing & development
 - **Staging** (`staging` branch) - Pre-production testing
-- **Production** (`production` branch) - Live site on GitLab Pages
+- **Production** (`production` branch) - Live site deployment
+
+### GitHub Actions Workflows
+
+#### Main CI/CD Pipeline (`.github/workflows/ci-cd.yml`)
+- **Build**: Automated building on all branches
+- **Integration Tests**: Runs on `development` branch pushes
+- **Staging Deploy**: Manual deployment to staging environment
+- **Production Deploy**: Automated deployment to production
+- **Regression Tests**: Post-production validation
+- **Security Audit**: Automated vulnerability scanning
+- **Performance Check**: Bundle size and performance metrics
+
+#### Pull Request Checks (`.github/workflows/pr-checks.yml`)
+- **PR Validation**: Build, test, and type checking for PRs
+- **Dependency Review**: Security checks for new dependencies
+- **Automated Comments**: Status updates on pull requests
+
+#### Scheduled Maintenance (`.github/workflows/scheduled.yml`)
+- **Weekly Security Audit**: Automated vulnerability scanning
+- **Dependency Updates**: Check for outdated packages
+- **Performance Baseline**: Track build metrics over time
 
 ### Local Testing
 ```sh
@@ -60,6 +81,9 @@ npm run regression
 # Run type checking
 npm run check
 ```
+
+### GitLab CI/CD (Alternative)
+The project also includes `.gitlab-ci.yml` for GitLab Pages deployment with identical functionality.
 
 ## Branching Strategy
 - `production`: Production environment

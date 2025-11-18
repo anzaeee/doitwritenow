@@ -10,9 +10,17 @@
     isOpen = !isOpen;
   }
 
+  // Handle keyboard events for accessibility
+  function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleAccordion();
+    }
+  }
+
   // Close the accordion when clicking outside of it
-  function handleClickOutside(event) {
-    const target = event.target;
+  function handleClickOutside(event: Event) {
+    const target = event.target as HTMLElement;
     const accordion = document.getElementById("accordion");
 
     if (accordion && !accordion.contains(target)) {
@@ -32,14 +40,22 @@
 </script>
 
 <div id="accordion" class="accordion">
-  <div class="accordion-header" on:click={toggleAccordion}>
+  <div
+    class="accordion-header"
+    role="button"
+    tabindex="0"
+    aria-expanded={isOpen}
+    aria-controls="accordion-content"
+    on:click={toggleAccordion}
+    on:keydown={handleKeyDown}
+  >
     <div class="accordion-title">
       <slot name="label">Accordion Title</slot>
     </div>
-    <div class="accordion-icon">{isOpen ? "-" : "+"}</div>
+    <div class="accordion-icon" aria-hidden="true">{isOpen ? "-" : "+"}</div>
   </div>
   {#if isOpen}
-    <div class="accordion-content">
+    <div id="accordion-content" class="accordion-content">
       <slot />
     </div>
   {/if}
